@@ -19,7 +19,7 @@
 (setq doom-theme 'doom-nord)
 (after! doom-themes
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-      doom-themes-enable-italic t) ; if nil, italics is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
   (doom-themes-visual-bell-config))
 
 ;; Font
@@ -31,14 +31,14 @@
         '(;; Directory containing project root directories
           ("~/Code/"    . 2)
           ;; Specific project root directory
-         )))
+          )))
 (after! (projectile magit)
   (mapc #'projectile-add-known-project
         (mapcar #'file-name-as-directory (magit-list-repos)))
-    (projectile-add-known-project "~/.doom.d/")
-    (projectile-add-known-project "~/.config/")
-    ;; Optionally write to persistent `projectile-known-projects-file'
-    (projectile-save-known-projects))
+  (projectile-add-known-project "~/.doom.d/")
+  (projectile-add-known-project "~/.config/")
+  ;; Optionally write to persistent `projectile-known-projects-file'
+  (projectile-save-known-projects))
 
 
 ;; Undo only in selected region
@@ -59,11 +59,11 @@
 (use-package! copilot
   :hook (prog-mode . copilot-mode)
   :config (setq copilot-idle-delay 1))
-  ;; :bind (("C-TAB" . 'copilot-accept-completion-by-word)
-  ;;        ("C-<tab>" . 'copilot-accept-completion-by-word)
-  ;;        :map copilot-completion-map
-  ;;        ("<tab>" . 'copilot-accept-completion)
-  ;;        ("TAB" . 'copilot-accept-completion)))
+;; :bind (("C-TAB" . 'copilot-accept-completion-by-word)
+;;        ("C-<tab>" . 'copilot-accept-completion-by-word)
+;;        :map copilot-completion-map
+;;        ("<tab>" . 'copilot-accept-completion)
+;;        ("TAB" . 'copilot-accept-completion)))
 
 ;; No snippet completion
 (setq +lsp-company-backends '(company-capf))
@@ -73,7 +73,7 @@
   (push "[/\\\\]docker\\'" lsp-file-watch-ignored-directories)
   (push "[/\\\\]coverage\\'" lsp-file-watch-ignored-directories)
   (push "[/\\\\].angular\\'" lsp-file-watch-ignored-directories))
-  ;; disable snippet completion
+;; disable snippet completion
 (after! lsp-mode
   (setq lsp-enable-snippet nil)
   (setq lsp-modeline-code-actions-enable nil)
