@@ -45,6 +45,8 @@
 (after! undo-fu
   (setq undo-fu-allow-undo-in-region t))
 
+;; Default to prettier formatting for html files
+(setq-hook! 'web-mode-hook +format-with 'prettier-js)
 ;; Format with Prettier on save
 (add-hook! (typescript-mode web-mode js2-mode json-mode) 'prettier-js-mode)
 
