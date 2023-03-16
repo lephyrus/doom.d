@@ -107,6 +107,15 @@
         (call-interactively 'lsp-rename))
     (call-interactively 'lsp-rename)))
 
+(defun my-vterm/split-right ()
+  "Create a new vterm window to the right of the current one."
+  (interactive)
+  (let* ((ignore-window-parameters t)
+         (dedicated-p (window-dedicated-p)))
+    (split-window-horizontally)
+    (other-window 1)
+    (+vterm/here default-directory)))
+
 (defun doom/ediff-init-and-example ()
   "ediff the current `init.el' with the example in doom-emacs-dir"
   (interactive)
