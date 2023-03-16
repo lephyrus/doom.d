@@ -27,12 +27,11 @@
 
 ;; Better projectile config for NPM projects
 (after! projectile
-  (projectile-register-project-type 'npm '("package.json")
-                                    :project-file "package.json"
-                                    :compile "yarn install"
-                                    :test "yarn test"
-                                    :run "yarn start"
-                                    :test-suffix ".spec"))
+  (projectile-update-project-type 'npm
+                                  :compile "yarn install"
+                                  :test "yarn test"
+                                  :run "yarn start"
+                                  :test-suffix ".spec"))
 
 ;; Use git respositories as known projects
 (after! magit
