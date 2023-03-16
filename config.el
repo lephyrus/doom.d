@@ -115,3 +115,8 @@
 
 (define-key! help-map
   "di"   #'doom/ediff-init-and-example)
+
+;; autosave recently used files (better session restore after unclean shutdown)
+(after! recentf
+  (recentf-load-list)
+  (run-at-time nil (* 60 60) #'recentf-save-list)) ; every 60 mins
