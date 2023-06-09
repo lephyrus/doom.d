@@ -133,3 +133,13 @@
 ;; lsp support for tailwind
 (after! lsp-tailwindcss
   (setq lsp-tailwindcss-add-on-mode t))
+
+;; jest minor mode
+(add-hook! '+javascript-npm-mode-hook 'jest-minor-mode)
+
+;; make compile-goto-error work in jest output
+(push 'jest-error compilation-error-regexp-alist)
+(push '(jest-error
+        "^[ ]*at .* (\\([^:]+\\):\\([0-9]+\\):\\([0-9]+\\))" 1 2)
+
+      compilation-error-regexp-alist-alist)
