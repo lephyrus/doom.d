@@ -75,13 +75,17 @@
       "C-4" 'magit-section-show-level-4-all)
 
 ;; copilot
-(map! :map company-active-map
-     "C-<tab>" nil)
 (map! :map copilot-completion-map
       "C-<tab>" 'copilot-accept-completion)
+
+;; corfu
+(map! :after corfu
+      :map corfu-map
+      [remap next-line] nil
+      [remap previous-line] nil)
 
 ;; misc
 (map!
  "C-;" 'comment-line
- "C-SPC" 'company-complete
+ "C-SPC" 'completion-at-point
  "M-RET" '+default/newline-below)
