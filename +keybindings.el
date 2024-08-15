@@ -34,12 +34,12 @@
 
 ;; M-x
 (map! :map general-override-mode-map
-     "M-x" nil
-     "M-a" 'execute-extended-command)
+      "M-x" nil
+      "M-a" 'execute-extended-command)
 
 ;; open file, starting at current directory
 (map!
-  "C-o" 'find-file)
+ "C-o" 'find-file)
 
 ;; workspaces
 (map!
@@ -65,7 +65,7 @@
  "C-k" 'kill-line)
 
 (map! :map global-map
- "C-f" '+default/search-buffer)
+      "C-f" '+default/search-buffer)
 
 ;; magit
 (map! :map magit-mode-map
