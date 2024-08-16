@@ -65,18 +65,10 @@
 ;; use running emacs as editor from vterm
 (add-hook 'vterm-mode-hook 'with-editor-export-editor)
 
-;; accept completion from copilot and fallback to company
+;; enable copilot, with delay
 (use-package! copilot
   :hook (prog-mode . copilot-mode)
   :config (setq copilot-idle-delay 1))
-;; :bind (("C-TAB" . 'copilot-accept-completion-by-word)
-;;        ("C-<tab>" . 'copilot-accept-completion-by-word)
-;;        :map copilot-completion-map
-;;        ("<tab>" . 'copilot-accept-completion)
-;;        ("TAB" . 'copilot-accept-completion)))
-
-;; No snippet completion
-(setq +lsp-company-backends '(company-capf))
 
 ;; lsp
 (after! lsp
