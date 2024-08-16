@@ -39,7 +39,12 @@
         '(;; Directory containing project root directories
           ("~/Code/"    . 2)
           ;; Specific project root directory
-          )))
+          )
+        transient-values '((magit-rebase "--autosquash" "--autostash")
+                           (magit-pull "--rebase" "--autostash")
+                           (magit-revert "--autostash")
+                           (magit-diff:magit-diff-mode "--color-moved=dimmed-zebra" "--color-moved-ws=ignore-all-space" "--no-ext-diff" "--stat"))))
+
 (after! (projectile magit)
   (mapc #'projectile-add-known-project
         (mapcar #'file-name-as-directory (magit-list-repos)))
