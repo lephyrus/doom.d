@@ -50,7 +50,6 @@
 ;(unpin! t)
 
 (package! zoom-window)
-(package! prettier-js)
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
 (package! lsp-tailwindcss
