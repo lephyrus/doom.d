@@ -53,6 +53,10 @@
 ;; mark
 (map!
  "M-SPC" 'set-mark-command)
+(map!
+ "<XF86Tools>" 'set-mark-command)
+(map!
+ "<Tools>" 'set-mark-command)
 
 ;; kill ring
 (map!
