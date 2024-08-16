@@ -76,6 +76,10 @@
   (push "[/\\\\]docker\\'" lsp-file-watch-ignored-directories)
   (push "[/\\\\]coverage\\'" lsp-file-watch-ignored-directories)
   (push "[/\\\\].angular\\'" lsp-file-watch-ignored-directories))
+;; as per FAQ: avoid eslint (and other multiroot servers) always starting in all
+;; workspace folders that were ever added
+(advice-add 'lsp :before (lambda (&rest _args) (eval '(setf (lsp-session-server-id->folders (lsp-session)) (ht)))))
+
 ;; disable snippet completion
 (after! lsp-mode
   (setq lsp-enable-snippet nil)
