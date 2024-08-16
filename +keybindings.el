@@ -88,6 +88,12 @@
       [remap next-line] nil
       [remap previous-line] nil)
 
+;; flymake
+(map! :map flymake-mode-map
+      "M-n" #'flymake-goto-next-error
+      "M-p" #'flymake-goto-prev-error
+      "C-c !" #'consult-flymake)
+
 ;; misc
 (map!
  "C-;" 'comment-line
