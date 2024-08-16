@@ -130,3 +130,7 @@
         "^[ ]*at .* (\\([^:]+\\):\\([0-9]+\\):\\([0-9]+\\))" 1 2)
 
       compilation-error-regexp-alist-alist)
+
+(use-package! gleam-ts-mode)
+;; enable gleam-ts-mode for .gleam files
+(add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode))

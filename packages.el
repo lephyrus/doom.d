@@ -55,5 +55,7 @@
 (package! lsp-tailwindcss
   :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
 (package! jest)
+(package! gleam-ts-mode
+  :recipe (:host github :repo "gleam-lang/gleam-mode"))
 
 (package! tide :disable t)
