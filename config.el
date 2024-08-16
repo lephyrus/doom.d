@@ -40,6 +40,7 @@
           ("~/Code/"    . 2)
           ;; Specific project root directory
           )
+        magit-list-refs-sortby "-committerdate"
         transient-values '((magit-rebase "--autosquash" "--autostash")
                            (magit-pull "--rebase" "--autostash")
                            (magit-revert "--autostash")
