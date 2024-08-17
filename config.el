@@ -46,7 +46,9 @@
         transient-values '((magit-rebase "--autosquash" "--autostash")
                            (magit-pull "--rebase" "--autostash")
                            (magit-revert "--autostash")
-                           (magit-diff:magit-diff-mode "--color-moved=dimmed-zebra" "--color-moved-ws=ignore-all-space" "--no-ext-diff" "--stat"))))
+                           (magit-diff:magit-diff-mode "--color-moved=dimmed-zebra" "--color-moved-ws=ignore-all-space" "--no-ext-diff" "--stat")))
+  (setq magit-section-initial-visibility-alist
+        '((untracked . show) (stashes . show) (unpushed . show))))
 
 (after! (projectile magit)
   (mapc #'projectile-add-known-project
