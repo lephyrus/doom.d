@@ -28,8 +28,8 @@
 (map! :map general-override-mode-map
       "M-0" 'delete-window
       "M-1" 'zoom-window-zoom
-      "M-2" 'split-window-vertically
-      "M-3" 'split-window-horizontally
+      "M-2" (lambda () (interactive) (split-window-vertically) (other-window 1))
+      "M-3" (lambda () (interactive) (split-window-horizontally) (other-window 1))
       "M-4" 'balance-windows)
 
 ;; M-x
