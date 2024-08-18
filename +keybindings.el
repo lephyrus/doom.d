@@ -94,6 +94,10 @@
       "M-p" #'flymake-goto-prev-error
       "C-c !" #'consult-flymake)
 
+;; dired+dirvish
+(map! :map dired-mode-map
+      "<tab>" 'dirvish-toggle-subtree)
+
 ;; misc
 (map!
  "C-;" 'comment-line
