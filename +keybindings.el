@@ -12,10 +12,13 @@
       "M-L" 'end-of-line
       "M-I" 'scroll-down
       "M-K" 'scroll-up
-      "M-C-j" 'backward-sexp
-      "M-C-l" 'forward-sexp
       "M-h" 'beginning-of-buffer
       "M-H" 'end-of-buffer)
+(map! :map smartparens-mode-map
+      "C-M-n" nil   ; free up for flymake-goto-next-error
+      "C-M-p" nil   ; free up for flymake-goto-prev-error
+      "M-C-j" 'backward-sexp
+      "M-C-l" 'forward-sexp)
 
 ;; window navigation
 (map! :map general-override-mode-map
@@ -90,8 +93,8 @@
 
 ;; flymake
 (map! :map flymake-mode-map
-      "M-n" #'flymake-goto-next-error
-      "M-p" #'flymake-goto-prev-error
+      "C-M-n" #'flymake-goto-next-error
+      "C-M-p" #'flymake-goto-prev-error
       "C-c !" #'consult-flymake)
 
 ;; dired+dirvish
