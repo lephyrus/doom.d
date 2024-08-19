@@ -17,6 +17,9 @@
 ;; Always use tab width of 2
 (setq-default tab-width 2)
 
+;; take new window space from all other windows (not just current)
+(setq-default window-combination-resize t)
+
 ;; Theme
 (setq doom-theme 'doom-nord)
 (after! doom-themes
