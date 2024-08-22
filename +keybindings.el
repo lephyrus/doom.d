@@ -14,11 +14,6 @@
       "M-K" 'scroll-up
       "M-h" 'beginning-of-buffer
       "M-H" 'end-of-buffer)
-(map! :map smartparens-mode-map
-      "C-M-n" nil   ; free up for flymake-goto-next-error
-      "C-M-p" nil   ; free up for flymake-goto-prev-error
-      "M-C-j" 'backward-sexp
-      "M-C-l" 'forward-sexp)
 
 ;; window navigation
 (map! :map general-override-mode-map
@@ -81,6 +76,14 @@
       "C-3" 'magit-section-show-level-3-all
       "C-4" 'magit-section-show-level-4-all)
 
+;; smartparens
+(map! :after smartparens
+      :map smartparens-mode-map
+      "C-M-n" nil   ; free up for flymake-goto-next-error
+      "C-M-p" nil   ; free up for flymake-goto-prev-error
+      "M-C-j" 'backward-sexp
+      "M-C-l" 'forward-sexp)
+
 ;; copilot
 (map! :map copilot-completion-map
       "C-<tab>" 'copilot-accept-completion)
@@ -96,6 +99,11 @@
       "C-M-n" #'flymake-goto-next-error
       "C-M-p" #'flymake-goto-prev-error
       "C-c !" #'consult-flymake)
+
+;; flycheck
+(map! :map flycheck-mode-map
+      "C-M-n" #'flycheck-next-error
+      "C-M-p" #'flycheck-previous-error)
 
 ;; dired+dirvish
 (map! :map dired-mode-map
